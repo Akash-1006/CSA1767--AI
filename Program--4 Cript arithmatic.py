@@ -1,7 +1,9 @@
 from itertools import permutations
 def solve_cryptarithmetic(puzzle):
     words = puzzle.split()
+    print(words)
     letters = set("".join(words))
+    print(letters)
     if len(letters) > 10:
         return "Too many unique letters"
     digit_permutations = permutations("0123456789", len(letters))
