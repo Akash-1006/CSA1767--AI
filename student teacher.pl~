@@ -9,3 +9,29 @@ teaches(juniper, csc134).
 
 
 professor(X, Y) :- teaches(X, C),studies(Y, C).
+
+
+% Query 1: Find all students taught by Professor Kirke
+?- professor(kirke, Y).
+% Explanation:
+% The query matches the professor Kirke (X = kirke) with students (Y) who are studying courses (C) taught by Kirke.
+% Result:
+% Y = charlie ;
+% Y = olivia.
+
+% Query 2: Find the professor who teaches Jack
+?- professor(X, jack).
+% Explanation:
+% The query matches students (Y = jack) with professors (X) who teach the courses (C) Jack is studying.
+% Result:
+% X = collins.
+
+% Query 3: Find all professor-student pairs
+?- professor(X, Y).
+% Explanation:
+% The query lists all pairs of professors (X) and students (Y) who are connected through the same course (C).
+% Result:
+% X = kirke, Y = charlie ;
+% X = kirke, Y = olivia ;
+% X = collins, Y = jack ;
+% X = juniper, Y = arthur.
